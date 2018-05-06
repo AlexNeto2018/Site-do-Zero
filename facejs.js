@@ -67,11 +67,46 @@
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('me?fields=id,name,likes.limit(100){name,link,fan_count,picture}', function(response) {
-      console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+    
+    FB.api('me?fields=id,name,likes.limit(100)				{name,link,fan_count,picture}', function(response) {
+		if (response){
+			percorrePagina(response);
+			
+			
+		}
+      
     });
   }
+function percorrePagina(paginas){
+	pagina = document.getElementById('paginas');
+	
+	pagina.innerHTML = ''
+	for(var i=0, i< paginas.likes.length; i++){
+		pagina.innerHTML += '
+		
+		<div class="media">
+  <img class="mr-3" src=".../64x64" alt="Generic placeholder image">
+  <div class="media-body">
+    <h5 class="mt-0">Media heading</h5>
+    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+    <div class="media mt-3">
+      <a class="pr-3" href="#">
+        <img src=".../64x64" alt="Generic placeholder image">
+      </a>
+      <div class="media-body">
+        <h5 class="mt-0">Media heading</h5>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+      </div>
+    </div>
+  </div>
+</div>
+		'
+		
+	}
+	
+}
+
+function perc
+
 </script>

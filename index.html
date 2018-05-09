@@ -1,16 +1,45 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+	<meta charset="utf-8">
 	<script type="text/javascript" src="js/facejs.js"></script>
+	<script type="text/javascript" src="verificarTexto">
+	</script>
 	
-<title>Login</title>
+<title>brotherhood - Login </title>
 	
 <link href="facecss.css" rel="stylesheet" type="text/css">
 	
 </head>
 
 <body>
+	<script language=javascript type="text/javascript">
+function verificarSenhas(){
+if (document.form.senha1.value == document.form.senha2.value)
+{alert ("As duas senhas conferem")
+}
+ 
+else{
+alert ("As duas senhas não conferem")
+}
+}
+</script>
+</head>
+<body>
+<form name="form">
+<input type=text name="senha1">
+<input type=text name="senha2">
+<input type="button" onClick="verificarSenhas()">
+</form>
+
+
+Read more: http://www.linhadecodigo.com.br/artigo/3503/configurando-funcoes-de-um-formulario-html-com-javascript.aspx#ixzz5EyqwxJuy
+	
+	
+	
+	
+	
+	
 	
 	<div id="fb-root"></div>
 <script>(function(d, s, id) {
